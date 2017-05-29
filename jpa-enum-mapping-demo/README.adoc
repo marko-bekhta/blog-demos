@@ -10,4 +10,4 @@ enums in entities.
 * usage of combination of `@Convert(converter = *.class)` and `AttributeConverter<?, ?>`
 * bonus: usage of Hibernate user type
 
-for detailed explanation and more info - check http://thisblogpost[this blog post].
+for detailed explanation and more info - check https://that-java-guy.blogspot.com/2017/05/jpa-mapping-enums-right-way.html[this blog post].
