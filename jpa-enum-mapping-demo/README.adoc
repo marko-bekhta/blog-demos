@@ -1,0 +1,13 @@
+= JPA Enum mapping demo
+
+This demo project shows different approaches that can be used in JPA to map
+enums in entities.
+
+* `@Enumerated(EnumType.ORDINAL)`
+* `@Enumerated(EnumType.STRING)`
+* combination of `@PostLoad` and `@PrePersist`
+* additional hidden setter/getter
+* usage of combination of `@Convert(converter = *.class)` and `AttributeConverter<?, ?>`
+* bonus: usage of Hibernate user type
+
+for detailed explanation and more info - check http://thisblogpost[this blog post].
