@@ -1,0 +1,9 @@
+= MapStruct 101
+
+This demo project shows how http://mapstruct.org[MapStruct] can be used to make
+mapping between Java bean types easier.
+A simple and a more complex mapping cases are considered. Also it shows how mappers
+can be generated in Maven project.
+
+For detailed explanation and more info - check
+https://that-java-guy.blogspot.com/2017/07/code-generators-mapstruct-101.html[this blog post].
