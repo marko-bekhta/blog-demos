@@ -2,6 +2,7 @@ package com.blogspot.that_java_guy;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
@@ -12,10 +13,10 @@ import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.service.ServiceRegistry;
 
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
 
 import com.blogspot.that_java_guy.converters.type.QuestionKindType;
 
@@ -30,9 +31,8 @@ public abstract class AbstractEntityTest {
 
 	protected EntityManager entityManager;
 
-	@BeforeAll
+	@BeforeClass
 	public static void setUpClass() {
-
 
 		ServiceRegistry standardRegistry = new StandardServiceRegistryBuilder().build();
 		MetadataSources sources = new MetadataSources( standardRegistry );
@@ -43,14 +43,14 @@ public abstract class AbstractEntityTest {
 		emf = Persistence.createEntityManagerFactory( PERSISTENCE_UNIT );
 	}
 
-	@BeforeEach
+	@Before
 	public void setUp() {
 		log.log( Level.CONFIG, "creating entity manager" );
 		entityManager = emf.createEntityManager();
 		entityManager.getTransaction().begin();
 	}
 
-	@AfterEach
+	@After
 	public void tearDown() {
 		log.log( Level.CONFIG, "closing entity manager" );
 		EntityTransaction transaction = entityManager.getTransaction();
@@ -67,7 +67,7 @@ public abstract class AbstractEntityTest {
 		entityManager.close();
 	}
 
-	@AfterAll
+	@AfterClass
 	public static void tearDownClass() {
 		log.log( Level.CONFIG, "closing entity manager factory" );
 		if ( emf != null ) {

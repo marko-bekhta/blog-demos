@@ -1,20 +1,22 @@
 package com.blogspot.that_java_guy.constants;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
+
+import org.junit.Test;
 
 /**
  * @author Marko Bekhta
  */
-class GradeTest {
+public class GradeTest {
 
 	@Test
-	void byChar() {
+	public void byChar() {
 		for ( Grade grade : Grade.values() ) {
-			Assertions.assertEquals( grade, Grade.byChar( grade.charGrade ) );
+			assertEquals( grade, Grade.byChar( grade.charGrade ) );
 		}
 
-		Assertions.assertNull( Grade.byChar( 'P' ) );
+		assertNull( Grade.byChar( 'P' ) );
 	}
 
 }

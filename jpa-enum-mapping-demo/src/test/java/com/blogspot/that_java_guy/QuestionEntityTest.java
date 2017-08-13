@@ -1,7 +1,8 @@
 package com.blogspot.that_java_guy;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Test;
 
 import com.blogspot.that_java_guy.constants.QuestionKind;
 
@@ -26,10 +27,11 @@ public class QuestionEntityTest extends AbstractEntityTest {
 				.setParameter( "id", question.getId() )
 				.getSingleResult();
 		System.err.println( resultRow );
-		Assertions.assertEquals(
+		assertEquals(
+				"JSON should match",
 				"{\"id\":4,\"description\":\"a result of performed calculus operations\",\"answerKind\":\"NUMBER\",\"multipleAnswers\":false}"
-				, resultRow,
-				"JSON should match"
+				, resultRow
+
 		);
 
 	}

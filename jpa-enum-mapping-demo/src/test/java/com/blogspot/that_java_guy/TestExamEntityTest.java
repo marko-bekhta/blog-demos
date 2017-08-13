@@ -1,9 +1,10 @@
 package com.blogspot.that_java_guy;
 
+import static org.junit.Assert.assertEquals;
+
 import java.util.Collections;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import com.blogspot.that_java_guy.constants.Gender;
 import com.blogspot.that_java_guy.constants.Grade;
@@ -12,7 +13,7 @@ import com.blogspot.that_java_guy.constants.Month;
 /**
  * @author Marko Bekhta
  */
-class TestExamEntityTest extends AbstractEntityTest {
+public class TestExamEntityTest extends AbstractEntityTest {
 
 	@Test
 	public void testEnum() {
@@ -31,7 +32,7 @@ class TestExamEntityTest extends AbstractEntityTest {
 				.setParameter( "id", testExam.getId() )
 				.getSingleResult();
 
-		Assertions.assertEquals( Grade.GRADE_A.charGrade.toString(), result );
+		assertEquals( Grade.GRADE_A.charGrade.toString(), result );
 	}
 
 }

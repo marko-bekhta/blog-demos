@@ -1,7 +1,9 @@
 package com.blogspot.that_java_guy;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Test;
 
 import com.blogspot.that_java_guy.constants.Gender;
 import com.blogspot.that_java_guy.constants.Grade;
@@ -10,7 +12,7 @@ import com.blogspot.that_java_guy.constants.Month;
 /**
  * @author Marko Bekhta
  */
-class ClassWorkEntityTest extends AbstractEntityTest {
+public class ClassWorkEntityTest extends AbstractEntityTest {
 
 	@Test
 	public void testEnum() {
@@ -27,8 +29,8 @@ class ClassWorkEntityTest extends AbstractEntityTest {
 				.setParameter( "id", homeWork.getId() )
 				.getSingleResult();
 
-		Assertions.assertEquals( "Learn JPA enum mappings", result[0] );
-		Assertions.assertEquals( Grade.GRADE_B.charGrade.toString(), result[1] );
+		assertEquals( "Learn JPA enum mappings", result[0] );
+		assertEquals( Grade.GRADE_B.charGrade.toString(), result[1] );
 	}
 
 }

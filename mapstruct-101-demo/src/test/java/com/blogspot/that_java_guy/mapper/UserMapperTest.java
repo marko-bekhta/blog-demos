@@ -1,11 +1,12 @@
 package com.blogspot.that_java_guy.mapper;
 
-import com.blogspot.that_java_guy.domain.UserEntity;
-import com.blogspot.that_java_guy.model.User;
-import org.junit.jupiter.api.Test;
-
 import static com.blogspot.that_java_guy.mapper.AddressMapperTest.assertAddress;
 import static org.assertj.core.api.Assertions.assertThat;
+
+import org.junit.Test;
+
+import com.blogspot.that_java_guy.domain.UserEntity;
+import com.blogspot.that_java_guy.model.User;
 
 /**
  * @author Marko Bekhta

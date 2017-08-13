@@ -1,48 +1,49 @@
 package com.blogspot.that_java_guy.mapper;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
+import org.junit.Before;
+import org.junit.Test;
+
 import com.blogspot.that_java_guy.domain.AddressEntity;
 import com.blogspot.that_java_guy.model.Address;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-
-import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * @author Marko Bekhta
  */
-class AddressMapperTest {
+public class AddressMapperTest {
 
-    private AddressEntity entity;
+	private AddressEntity entity;
 
-    @BeforeEach
-    void setUp() {
-        entity = Samples.addressEntity();
-    }
+	@Before
+	public void setUp() {
+		entity = Samples.addressEntity();
+	}
 
-    @Test
-    void constructorTest() {
-        Address address = new Address(entity);
+	@Test
+	public void constructorTest() {
+		Address address = new Address( entity );
 
-        assertAddress(entity, address);
-    }
+		assertAddress( entity, address );
+	}
 
-    @Test
-    void staticMethodTest() {
-        Address address = Address.from(entity);
+	@Test
+	public void staticMethodTest() {
+		Address address = Address.from( entity );
 
-        assertAddress(entity, address);
-    }
+		assertAddress( entity, address );
+	}
 
-    @Test
-    public void toAddressTest() {
-        Address address = AddressMapper.INSTANCE.toAddress(entity);
+	@Test
+	public void toAddressTest() {
+		Address address = AddressMapper.INSTANCE.toAddress( entity );
 
-        assertAddress(entity, address);
-    }
+		assertAddress( entity, address );
+	}
 
-    static void assertAddress(AddressEntity entity, Address address) {
-        assertThat(address).hasFieldOrPropertyWithValue("city", entity.getCity());
-        assertThat(address).hasFieldOrPropertyWithValue("street", entity.getStreet());
-    }
+	static void assertAddress(AddressEntity entity, Address address) {
+		assertThat( address ).hasFieldOrPropertyWithValue( "city", entity.getCity() );
+		assertThat( address ).hasFieldOrPropertyWithValue( "street", entity.getStreet() );
+	}
 
 }
