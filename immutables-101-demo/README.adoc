@@ -1,0 +1,7 @@
+= Immutables 101
+
+This demo project shows how https://immutables.github.io/[Immutables] can be used to make
+creating immutable objects much more quicker and easier.
+
+For detailed explanation and more info - check
+https://that-java-guy.blogspot.com/2017/08/code-generators-immutables-101.html[this blog post].
