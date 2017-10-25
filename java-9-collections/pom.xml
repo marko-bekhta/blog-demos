@@ -11,6 +11,12 @@
 
 	<artifactId>java-9-collections</artifactId>
 
+	<properties>
+		<maven.compiler.source>9</maven.compiler.source>
+		<maven.compiler.target>9</maven.compiler.target>
+
+	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.assertj</groupId>
