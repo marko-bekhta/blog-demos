@@ -13,6 +13,7 @@
         <module>mapstruct-101-demo</module>
         <module>immutables-101-demo</module>
         <module>jpa-many-to-many-map-mapping-demo</module>
+        <module>enum-helper-demo</module>
     </modules>
 
     <properties>
