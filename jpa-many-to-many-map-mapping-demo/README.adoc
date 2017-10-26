@@ -1,0 +1,8 @@
+= JPA Enum mapping demo
+
+This demo project shows a couple of different approaches how many-to-many relationships
+with additional information can be mapped using JPA.
+
+image::https://4.bp.blogspot.com/-N91sTPh6JO8/We-WHAvhQrI/AAAAAAAAAQ4/08mQxdQESVMXp9FAY-MVR1RaRbaBY28WACLcBGAs/s1600/actor_light.png[]
+
+for detailed explanation and more info - check https://that-java-guy.blogspot.com/2017/10/jpa-ways-to-map-many-to-many.html[this blog post].
