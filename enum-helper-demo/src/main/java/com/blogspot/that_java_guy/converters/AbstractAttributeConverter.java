@@ -21,6 +21,12 @@ public abstract class AbstractAttributeConverter<ActualEnum extends DbEnumConsta
 
 	@Override
 	public ActualEnum convertToEntityAttribute(ID dbData) {
+		// if the value in the DB is null we will return null as well
+		if ( dbData == null ) {
+			return null;
+		}
+		// Otherwise, a helper is used to find a matching enum constant,
+		// and if one cannot be found an exception is thrown.
 		return helper().byIdOrThrow(
 				dbData,
 				() -> new IllegalStateException(

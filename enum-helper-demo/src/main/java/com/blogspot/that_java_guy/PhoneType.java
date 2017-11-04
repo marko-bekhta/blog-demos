@@ -1,5 +1,7 @@
 package com.blogspot.that_java_guy;
 
+import java.util.Arrays;
+
 import javax.persistence.AttributeConverter;
 
 import com.blogspot.that_java_guy.util.DbEnumConstant;
@@ -36,13 +38,33 @@ public enum PhoneType implements DbEnumConstant<Integer> {
 	public static class PhoneTypeAttributeConverter implements AttributeConverter<PhoneType, Integer> {
 		@Override
 		public Integer convertToDatabaseColumn(PhoneType attribute) {
-			return null;
+			return attribute.getId();
 		}
 
 		@Override
 		public PhoneType convertToEntityAttribute(Integer dbData) {
-			return null;
+			if ( dbData == null ) {
+				return null;
+			}
+			return Arrays.stream( PhoneType.values() )
+					.filter( item -> item.getId().equals( dbData ) )
+					.findFirst().orElseThrow( IllegalArgumentException::new );
 		}
+	}
+
+	/**
+	 * Find an enum value by it's {@code id} in {@code values} array.
+	 *
+	 * @param id an {@code id} of the enum that we search for
+	 * @param values an array of values to search
+	 * @param <ID> an id type for the enum
+	 * @param <T> an actual enum type
+	 * @return if found - enum constant value, otherwise throws an {@link IllegalArgumentException}
+	 */
+	public static <ID, T extends DbEnumConstant<ID>> T findByID(ID id, T[] values) {
+		return Arrays.stream( values )
+				.filter( item -> item.getId().equals( id ) )
+				.findFirst().orElseThrow( IllegalArgumentException::new );
 	}
 
 }
