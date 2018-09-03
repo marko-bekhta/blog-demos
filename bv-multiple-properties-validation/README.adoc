@@ -1,0 +1,12 @@
+= Bean Validation: Validation based on multiple properties
+
+This demo project shows how http://beanvalidation.org/[Bean Validation] can be used to implement
+validation rules that require knowledge of the state of multiple properties of the same bean.
+Next approaches are considered:
+
+- Usage of getter and `@AssertTrue`
+- Usage of `@ScriptAssert` as a class level constraint
+- Usage of custom class level constraint
+
+For detailed explanation and more info - check
+https://that-java-guy.blogspot.com/2018/09/bean-validation-conditional-property.html[this blog post].

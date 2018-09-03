@@ -15,6 +15,7 @@
         <module>jpa-many-to-many-map-mapping-demo</module>
         <module>java-9-collections</module>
         <module>enum-helper-demo</module>
+        <module>bv-multiple-properties-validation</module>
     </modules>
 
     <properties>
